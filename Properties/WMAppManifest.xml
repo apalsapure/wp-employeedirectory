@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{528b9dee-c53d-43b0-91cc-353bb840e00d}" Title="EmployeeDirectory" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="EmployeeDirectory author" Description="Sample description" Publisher="EmployeeDirectory" PublisherID="{38b7617f-acc4-4c07-a571-27faf59d1bed}">
+  <App xmlns="" ProductID="{528b9dee-c53d-43b0-91cc-353bb840e00d}" Title="Appacitive Employee Directory" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="EmployeeDirectory author" Description="Sample description" Publisher="EmployeeDirectory" PublisherID="{38b7617f-acc4-4c07-a571-27faf59d1bed}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
