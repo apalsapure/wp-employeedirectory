@@ -4,11 +4,11 @@
     xmlns:vm="clr-namespace:EmployeeDirectory">
 
     <vm:MainViewModel.Items>
-        <vm:User Id="0" Name="John Doe" Designation="Sales Manager" FaceUrl="/Assets/DefaultImage.png"/>
-        <vm:User Id="0" Name="Agent Smith" Designation="The Agent" FaceUrl="/Assets/DefaultImage.png"/>
-        <vm:User Id="0" Name="Jane Doe" Designation="Product Manager" FaceUrl="/Assets/DefaultImage.png"/>
-        <vm:User Id="0" Name="Jack Smith" Designation="Developer" FaceUrl="/Assets/DefaultImage.png"/>
-        <vm:User Id="0" Name="Neo" Designation="The One" FaceUrl="/Assets/DefaultImage.png"/>
+        <vm:Employee Id="0" Name="John Doe" Designation="Sales Manager" FaceUrl="/Assets/DefaultImage.png"/>
+        <vm:Employee Id="0" Name="Agent Smith" Designation="The Agent" FaceUrl="/Assets/DefaultImage.png"/>
+        <vm:Employee Id="0" Name="Jane Doe" Designation="Product Manager" FaceUrl="/Assets/DefaultImage.png"/>
+        <vm:Employee Id="0" Name="Jack Smith" Designation="Developer" FaceUrl="/Assets/DefaultImage.png"/>
+        <vm:Employee Id="0" Name="Neo" Designation="The One" FaceUrl="/Assets/DefaultImage.png"/>
     </vm:MainViewModel.Items>
 
 </vm:MainViewModel>

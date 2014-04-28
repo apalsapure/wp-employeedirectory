@@ -39,7 +39,7 @@ namespace EmployeeDirectory
                 return;
 
             // Navigate to the new page
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?source=0&selectedItem=" + (MainListBox.SelectedItem as User).Id, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?source=0&selectedItem=" + (MainListBox.SelectedItem as Employee).Id, UriKind.Relative));
 
             // Reset selected item to null (no selection)
             MainListBox.SelectedItem = null;

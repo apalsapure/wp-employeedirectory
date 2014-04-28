@@ -10,6 +10,7 @@
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:EmployeeDirectory" x:Key="LocalizedStrings"/>
         <converter:ProgressBarVisibilityConverter  x:Key="ProgressBarVisibilityConverter"/>
+        <converter:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
         <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>

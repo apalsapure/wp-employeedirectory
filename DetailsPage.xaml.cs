@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 
 namespace EmployeeDirectory
 {
@@ -44,10 +45,34 @@ namespace EmployeeDirectory
                 return;
 
             // Navigate to the new page
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + (ListBox.SelectedItem as User).Id, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + (ListBox.SelectedItem as Employee).Id, UriKind.Relative));
 
             // Reset selected item to null (no selection)
             ListBox.SelectedItem = null;
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            var linkButton = sender as HyperlinkButton;
+            // Navigate to the new page
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + linkButton.CommandParameter, UriKind.Relative));
+        }
+
+        private void PhoneHyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            var linkButton = sender as HyperlinkButton;
+            PhoneCallTask phoneCallTask = new PhoneCallTask();
+            phoneCallTask.PhoneNumber = linkButton.CommandParameter as string;
+            phoneCallTask.Show();
+        }
+
+        private void EmailHyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            var linkButton = sender as HyperlinkButton;
+            EmailComposeTask emailComposeTask = new EmailComposeTask();
+            emailComposeTask.To = linkButton.CommandParameter as string;
+            emailComposeTask.Subject = "Sample Email";
+            emailComposeTask.Show();
         }
     }
 }
