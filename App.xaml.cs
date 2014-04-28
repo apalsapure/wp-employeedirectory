@@ -1,4 +1,23 @@
-﻿using System;
+﻿//
+//  App.xaml.cs
+//  Appacitive Quickstart
+//
+//  Copyright 2014 Appacitive, Inc.
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
+
+using System;
 using System.Diagnostics;
 using System.Resources;
 using System.Windows;
@@ -78,16 +97,24 @@ namespace EmployeeDirectory
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            //Initializing Appacitive .Net SDK
+            Appacitive.Sdk.App.Initialize(Appacitive.Sdk.WindowsPhone8.Platforms.WP8,
+                                         "57178692622877665",
+                                         "DmzzNn+wR0+/noWjmaSIdA==",
+                                         Appacitive.Sdk.Environment.Sandbox);
+
+            //Map your model object to appacitive type
+            Appacitive.Sdk.App.Types.MapObjectType<Employee>("employees");
         }
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
-        private void Application_Activated(object sender, ActivatedEventArgs e)
+        private async void Application_Activated(object sender, ActivatedEventArgs e)
         {
             // Ensure that application state is restored appropriately
             if (!App.ViewModel.IsDataLoaded)
             {
-                App.ViewModel.LoadData();
+                await App.ViewModel.LoadData();
             }
         }
 

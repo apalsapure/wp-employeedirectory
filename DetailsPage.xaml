@@ -25,7 +25,7 @@
         </StackPanel>
         <phone:Panorama Grid.Row="1">
             <phone:Panorama.Title>
-                <TextBlock Text="{Binding User.Name}" Style="{StaticResource PhoneTextTitle1Style}" Margin="7, 28, 0,0"></TextBlock>
+                <TextBlock Text="{Binding Employee.Name}" Style="{StaticResource PhoneTextTitle1Style}" Margin="7, 28, 0,0"></TextBlock>
             </phone:Panorama.Title>
             <!--Panorama item one-->
             <phone:PanoramaItem>
@@ -34,50 +34,54 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Image Source="{Binding User.FaceUrl}" Height="180" Margin="0, 10, 0, 20" HorizontalAlignment="Left" />
+                        <Image Source="{Binding Employee.FaceUrl}" Height="180" Margin="0, 10, 0, 20" HorizontalAlignment="Left" />
                         <StackPanel Grid.Row="1" Margin="0, 0, 0, 25">
-                            <TextBlock Text="{Binding User.Name}" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                            <TextBlock Text="{Binding User.Designation}" Margin="0, 5, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}"/>
+                            <TextBlock Text="{Binding Employee.Name}" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                            <TextBlock Text="{Binding Employee.Designation}" Margin="0, 5, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}"/>
                         </StackPanel>
-                        <StackPanel Grid.Row="2" Visibility="{Binding User.HasManager, Converter={StaticResource BoolVisibilityConverter}}" Margin="0, 0, 0, 25">
-                            <TextBlock Text="Manager" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                            <HyperlinkButton Content="{Binding User.Manager.Name}" HorizontalAlignment="Left" CommandParameter="{Binding User.Manager.Id}" Click="HyperlinkButton_Click" Margin="-10, 2, 0, 0">
-                                <HyperlinkButton.Foreground>
-                                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-                                </HyperlinkButton.Foreground>
-                            </HyperlinkButton>
-                        </StackPanel>
-                        <StackPanel Grid.Row="3"  Visibility="{Binding User.HasCellPhone, Converter={StaticResource BoolVisibilityConverter}}" Margin="0, 0, 0, 25">
-                            <TextBlock Text="Cell Phone" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                            <HyperlinkButton Content="{Binding User.CellPhone}" HorizontalAlignment="Left" CommandParameter="{Binding User.CellPhone}" Click="PhoneHyperlinkButton_Click" Margin="-10, 2, 0, 0">
-                                <HyperlinkButton.Foreground>
-                                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-                                </HyperlinkButton.Foreground>
-                            </HyperlinkButton>
-                        </StackPanel>
-                        <StackPanel Grid.Row="4" Visibility="{Binding User.HasOfficePhone, Converter={StaticResource BoolVisibilityConverter}}" Margin="0, 0, 0, 25">
-                            <TextBlock Text="Office Phone" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                            <HyperlinkButton Content="{Binding User.OfficePhone}" HorizontalAlignment="Left" CommandParameter="{Binding User.OfficePhone}" Click="PhoneHyperlinkButton_Click" Margin="-10, 2, 0, 0">
-                                <HyperlinkButton.Foreground>
-                                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-                                </HyperlinkButton.Foreground>
-                            </HyperlinkButton>
-                        </StackPanel>
-
-                        <StackPanel Grid.Row="5" Margin="0, 0, 0, 20">
-                            <TextBlock Text="Email" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                            <HyperlinkButton Content="{Binding User.Email}" HorizontalAlignment="Left" CommandParameter="{Binding User.Email}" Click="EmailHyperlinkButton_Click" Margin="-10, 2, 0, 0">
-                                <HyperlinkButton.Foreground>
-                                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-                                </HyperlinkButton.Foreground>
-                            </HyperlinkButton>
-                        </StackPanel>
-
+                        <ProgressBar Grid.Row="2" Margin="0, 20, 0,0" IsIndeterminate="True" VerticalAlignment="Top" HorizontalAlignment="Stretch" Visibility="{Binding IsDataLoaded, Converter={StaticResource ProgressBarVisibilityConverter}}"></ProgressBar>
+                        <Grid Grid.Row="2" Visibility="{Binding IsDataLoaded, Converter={StaticResource BoolVisibilityConverter}}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Visibility="{Binding Employee.HasManager, Converter={StaticResource BoolVisibilityConverter}}" Margin="0, 0, 0, 25">
+                                <TextBlock Text="Manager" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                <HyperlinkButton Content="{Binding Employee.Manager.Name}" HorizontalAlignment="Left" CommandParameter="{Binding Employee.Manager.Id}" Click="HyperlinkButton_Click" Margin="-10, 2, 0, 0">
+                                    <HyperlinkButton.Foreground>
+                                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                                    </HyperlinkButton.Foreground>
+                                </HyperlinkButton>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1"  Visibility="{Binding Employee.HasCellPhone, Converter={StaticResource BoolVisibilityConverter}}" Margin="0, 0, 0, 25">
+                                <TextBlock Text="Cell Phone" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                <HyperlinkButton Content="{Binding Employee.CellPhone}" HorizontalAlignment="Left" CommandParameter="{Binding Employee.CellPhone}" Click="PhoneHyperlinkButton_Click" Margin="-10, 2, 0, 0">
+                                    <HyperlinkButton.Foreground>
+                                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                                    </HyperlinkButton.Foreground>
+                                </HyperlinkButton>
+                            </StackPanel>
+                            <StackPanel Grid.Row="2" Visibility="{Binding Employee.HasOfficePhone, Converter={StaticResource BoolVisibilityConverter}}" Margin="0, 0, 0, 25">
+                                <TextBlock Text="Office Phone" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                <HyperlinkButton Content="{Binding Employee.OfficePhone}" HorizontalAlignment="Left" CommandParameter="{Binding Employee.OfficePhone}" Click="PhoneHyperlinkButton_Click" Margin="-10, 2, 0, 0">
+                                    <HyperlinkButton.Foreground>
+                                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                                    </HyperlinkButton.Foreground>
+                                </HyperlinkButton>
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Margin="0, 0, 0, 20">
+                                <TextBlock Text="Email" Margin="0, 0, 0, 0" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                <HyperlinkButton Content="{Binding Employee.Email}" HorizontalAlignment="Left" CommandParameter="{Binding Employee.Email}" Click="EmailHyperlinkButton_Click" Margin="-10, 2, 0, 0">
+                                    <HyperlinkButton.Foreground>
+                                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                                    </HyperlinkButton.Foreground>
+                                </HyperlinkButton>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
                 </ScrollViewer>
             </phone:PanoramaItem>
@@ -91,8 +95,8 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" Margin="0, 0, 0, 10" Text="direct reports" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                    <ProgressBar Grid.Row="1" Margin="0, 20, 0,0" x:Name="pbar" IsIndeterminate="True" VerticalAlignment="Top" HorizontalAlignment="Stretch" Visibility="{Binding IsDataLoaded, Converter={StaticResource ProgressBarVisibilityConverter}}"></ProgressBar>
-                    <ListBox x:Name="ListBox" Grid.Row="1" Margin="0, 20, 0,0" ItemsSource="{Binding Items}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" SelectionChanged="ListBox_SelectionChanged">
+                    <ProgressBar Grid.Row="1" Margin="0, 20, 0,0" IsIndeterminate="True" VerticalAlignment="Top" HorizontalAlignment="Stretch" Visibility="{Binding IsDataLoaded, Converter={StaticResource ProgressBarVisibilityConverter}}"></ProgressBar>
+                    <ListBox x:Name="ListBox" Grid.Row="1" Margin="0, 0, 0,0" ItemsSource="{Binding Items}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" SelectionChanged="ListBox_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <ListBoxItem HorizontalContentAlignment="Stretch">
@@ -118,6 +122,7 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
+                    <TextBlock Grid.Row="1" Margin="5,0,0,0" Visibility="{Binding NoDirectReports, Converter={StaticResource BoolVisibilityConverter}}" Text="No direct reports." Style="{StaticResource PhoneTextSmallStyle}" />
                 </Grid>
             </phone:PanoramaItem>
         </phone:Panorama>

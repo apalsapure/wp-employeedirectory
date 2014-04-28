@@ -48,12 +48,12 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <Image Source="{Binding FaceUrl}" Grid.Column="0"/>
-                                <Grid Grid.Column="1">
+                                <Grid Grid.Column="1" VerticalAlignment="Top">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <TextBlock Text="{Binding Name}" TextTrimming="WordEllipsis" Grid.Row="0" TextWrapping="NoWrap" VerticalAlignment="Top" Grid.Column="1" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                    <TextBlock Text="{Binding Name}" TextTrimming="WordEllipsis" Grid.Row="0" TextWrapping="NoWrap" VerticalAlignment="Top" Grid.Column="1" Style="{StaticResource PhoneTextLargeStyle}" Margin="15, -4, 0, 0"/>
                                     <TextBlock Text="{Binding Designation}" Grid.Row="1" TextWrapping="NoWrap" Margin="15 3 0 0" VerticalAlignment="Top" Grid.Column="1" Style="{StaticResource PhoneTextSmallStyle}"/>
                                 </Grid>
                             </Grid>

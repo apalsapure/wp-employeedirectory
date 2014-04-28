@@ -3,8 +3,9 @@ Bin
 bin
 obj
 sql
-1. Library/Gossamer/*.config
-1. Library/Gossamer/*.manifest
+packages
+
+packages.config
 
 #Symbols
 
