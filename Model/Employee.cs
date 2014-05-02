@@ -29,7 +29,7 @@ namespace EmployeeDirectory
     public class Employee : Appacitive.Sdk.APObject
     {
         public Employee()
-            : base("employees")
+            : base("employee")
         { }
 
         //special constructor
@@ -95,7 +95,7 @@ namespace EmployeeDirectory
         {
             get
             {
-                return "http://cdn.appacitive.com/devcenter/root/emp-directory/" + this.Get<string>("pic");
+                return this.Get<string>("pic");
             }
             set
             {

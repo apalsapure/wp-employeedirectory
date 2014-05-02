@@ -99,12 +99,12 @@ namespace EmployeeDirectory
         {
             //Initializing Appacitive .Net SDK
             Appacitive.Sdk.App.Initialize(Appacitive.Sdk.WindowsPhone8.Platforms.WP8,
-                                         "57178692622877665",
-                                         "DmzzNn+wR0+/noWjmaSIdA==",
+                                         "{{APP ID}}",
+                                         "{{API Key}}",
                                          Appacitive.Sdk.Environment.Sandbox);
 
             //Map your model object to appacitive type
-            Appacitive.Sdk.App.Types.MapObjectType<Employee>("employees");
+            Appacitive.Sdk.App.Types.MapObjectType<Employee>("employee");
         }
 
         // Code to execute when the application is activated (brought to foreground)

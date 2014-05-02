@@ -57,7 +57,7 @@ namespace EmployeeDirectory
             this.Items.Clear();
 
             //Get all objects of type employees
-            var results = await Appacitive.Sdk.APObjects.FindAllAsync("employees",
+            var results = await Appacitive.Sdk.APObjects.FindAllAsync("employee",
                                                                        fields: new List<string> { "firstname", "lastname", "title", "pic" },
                                                                        orderBy: "__id",
                                                                        sortOrder: Appacitive.Sdk.SortOrder.Descending);
