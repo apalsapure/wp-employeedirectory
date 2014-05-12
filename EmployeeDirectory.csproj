@@ -156,13 +156,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Appacitive.Sdk, Version=0.9.8.23747, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Appacitive.Sdk, Version=0.9.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Appacitive.0.9.8\lib\wp8\Appacitive.Sdk.dll</HintPath>
+      <HintPath>packages\Appacitive.0.9.9\lib\wp8\Appacitive.Sdk.dll</HintPath>
     </Reference>
-    <Reference Include="Appacitive.Sdk.WindowsPhone8, Version=0.9.8.23748, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Appacitive.Sdk.WindowsPhone8, Version=0.9.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Appacitive.0.9.8\lib\wp8\Appacitive.Sdk.WindowsPhone8.dll</HintPath>
+      <HintPath>packages\Appacitive.0.9.9\lib\wp8\Appacitive.Sdk.WindowsPhone8.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
